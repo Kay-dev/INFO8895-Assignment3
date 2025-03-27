@@ -14,10 +14,12 @@ gitea:
   config:
     database:
       DB_TYPE: mysql
-      HOST: mysql:3306
+      HOST: mysql.default.svc.cluster.local:3306
       NAME: gitea
       USER: root
       PASSWD: admin8960392
+      CHARSET: utf8
+      PATH: /
     session:
       PROVIDER: memory
     cache:
