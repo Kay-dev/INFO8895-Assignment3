@@ -8,12 +8,16 @@ postgresql-ha:
   enabled: false
 
 persistence:
-  enabled: false
+  enabled: true
 
 gitea:
   config:
     database:
-      DB_TYPE: sqlite3
+      DB_TYPE: mysql
+      HOST: mysql:3306
+      NAME: gitea
+      USER: root
+      PASSWD: admin8960392
     session:
       PROVIDER: memory
     cache:
