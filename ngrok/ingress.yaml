@@ -1,7 +1,9 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: nginx-ingress
+  name: gitea-ingress
+  annotations:
+    ngrok.ingress.kubernetes.io/scheme: https
 spec:
   ingressClassName: ngrok
   rules:
@@ -12,6 +14,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: nginx-service
+                name: gitea-http
                 port:
-                  number: 80
+                  number: 3000
